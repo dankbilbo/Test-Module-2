@@ -76,7 +76,9 @@ public class Controller {
             contact.setNumber(sdt);
             contact.setGender(gioitinh);
             contact.setDob(dob);
+            IO.writeContactsToFile(contact);
             contacts.add(contact);
+
             return contact;
         } catch (Exception e) {
             System.out.println(" Nhập sai định dạng quay lại menu");

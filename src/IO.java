@@ -22,6 +22,19 @@ public class IO {
             System.out.println("I/O error");
         }
     }
+    public static void writeContactsToFile(Contact contact) {
+        file = new File("Contact.csv");
+        try {
+            file.createNewFile();
+            fileWriter = new FileWriter(file,true);
+            fileWriter.append(contact.stringToFile());
+            fileWriter.append("\n");
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("I/O error");
+        }
+    }
 
     public static ArrayList<Contact> readFileToListContact() {
         ArrayList<Contact> contacts = new ArrayList<>();
