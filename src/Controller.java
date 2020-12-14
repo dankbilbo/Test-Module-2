@@ -16,12 +16,12 @@ public class Controller {
         }
     }
 
-    public void add() {
+    public Contact add() {
         try {
             boolean checksdt = false;
             String sdt = null;
             do {
-                System.out.println("Nhập sdt");
+                System.out.println("Nhập sdt theo định dạng 09(01) ");
                 String sdtpattern = "^(09|01[2|6|8|9])+([0-9]{8})\\b";
                 sdt = sc.nextLine();
                 Pattern pattern = Pattern.compile(sdtpattern);
@@ -43,7 +43,7 @@ public class Controller {
             String dob = null;
             boolean checkNgaysinh = false;
             do {
-                System.out.println("Nhập ngày sinh");
+                System.out.println("Nhập ngày sinh theo định dạng mm/dd/yyyy");
                 String dobPattern = "^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$";
                 dob = sc.nextLine();
                 Pattern pattern = Pattern.compile(dobPattern);
@@ -77,8 +77,12 @@ public class Controller {
             contact.setGender(gioitinh);
             contact.setDob(dob);
             contacts.add(contact);
+            return contact;
         } catch (Exception e) {
             System.out.println(" Nhập sai định dạng quay lại menu");
+        }
+        finally {
+            return null;
         }
     }
 
@@ -106,6 +110,7 @@ public class Controller {
                 if (contact.getNumber().equals(sdt)) {
                     contacts.remove(contacts.indexOf(contact));
                     add();
+                    add().setNumber(sdt);
                     return;
                 }
             }

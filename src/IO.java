@@ -14,7 +14,7 @@ public class IO {
             fileWriter = new FileWriter(file);
             for (Contact contact : contacts) {
                 fileWriter.append(contact.stringToFile());
-                fileWriter.append(",");
+                fileWriter.append("\n");
                 fileWriter.flush();
             }
             fileWriter.close();
