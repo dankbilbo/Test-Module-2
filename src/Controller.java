@@ -21,7 +21,7 @@ public class Controller {
             boolean checksdt = false;
             String sdt = null;
             do {
-                System.out.println("Nhập sdt theo định dạng 09(01) ");
+                System.out.println("Nhập sdt theo định dạng 10 số ");
                 String sdtpattern = "^(09|01[2|6|8|9])+([0-9]{8})\\b";
                 sdt = sc.nextLine();
                 Pattern pattern = Pattern.compile(sdtpattern);
