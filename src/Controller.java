@@ -112,7 +112,6 @@ public class Controller {
                 if (contact.getNumber().equals(sdt)) {
                     contacts.remove(contacts.indexOf(contact));
                     add();
-                    add().setNumber(sdt);
                     return;
                 }
             }
